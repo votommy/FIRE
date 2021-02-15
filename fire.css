@@ -73,7 +73,8 @@ main {
 }
 
 .h1 {
-    font-size: 1.6rem;
+    font-size: 2rem;
+    color: var(--tommagenta);
 }
 .h2 {
     font-size: 1.3rem;
@@ -140,4 +141,19 @@ button {
 button:hover {
     background-color: #EEE;
     cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 0px;
+  text-align: left;
+  padding: .5rem;
+}
+
+tr:nth-child(odd) {
+  background-color: #FFFFFF70;
 }
