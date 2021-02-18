@@ -1,5 +1,5 @@
 :root {
-    --tommagenta: #ef6f7f;
+    --tommagenta: #fa807e;
 }
 
 @font-face {
@@ -129,6 +129,39 @@ input {
 #labelEnd {
     font-size: 1.5rem;
     margin-left: .5rem;
+}
+
+.info {
+    font-size: 1.5rem;
+    color: var(--tommagenta);
+    position: relative;
+    display: inline-block;
+}
+.info:hover {
+    cursor: pointer;
+}
+.tooltip {
+    visibility: hidden;
+    border-radius: 1rem;
+    padding: .5rem;
+    background-color: white;
+    position: absolute;
+    font-size: 1rem;
+    color: black;
+    min-width: 13rem;
+    z-index: 99;
+}
+.infoSpending:hover .tooltipSpending {
+    visibility: visible;
+}
+.infoInvestment:hover .tooltipInvestment {
+    visibility: visible;
+}
+.infoAnnualContribution:hover .tooltipAnnualContribution {
+    visibility: visible;
+}
+.infoReturnRate:hover .tooltipReturnRate {
+    visibility: visible;
 }
 
 button {
