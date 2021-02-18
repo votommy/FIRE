@@ -10,6 +10,7 @@ function calculate() {
     const getReturnRate = document.getElementById("returnRate");
     const retirementGoal = (getSpending.value / (getReturnRate.value / 100)) * 12;
     const getAge = document.getElementById("age");
+    document.getElementById("tommy").innerHTML = retirementGoal;
     
     let spending = getSpending.value;
     if (spending.length == 0) {
@@ -47,12 +48,12 @@ function calculate() {
             xtraDigit = "";
         }
         if (investment >= retirementGoal && retireYet == 0) {
-            retirementMarker = count;
+            retirementMarker = count + 2; // +2 to compensate for header row and the fact that index starts with 1
             retireYet = 1;
             if (age > (endAge - 10)) { // Always show at LEAST 10 years after retirement
                 endAge = age + 10;
             }
-        }                                        
+        }
         let labelCol = "<tr><td>" + xtraDigit.concat(count) + "</td><td>Age " + age + "</td><td>" + year + "</td><td>" + new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(investment) + "</td><td>" + new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(gains) + "</td></tr>"
         text += labelCol;                    
         investment *= returnRate;
