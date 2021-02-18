@@ -10,7 +10,6 @@ function calculate() {
     const getReturnRate = document.getElementById("returnRate");
     const retirementGoal = (getSpending.value / (getReturnRate.value / 100)) * 12;
     const getAge = document.getElementById("age");
-    document.getElementById("tommy").innerHTML = retirementGoal;
     
     let spending = getSpending.value;
     if (spending.length == 0) {
