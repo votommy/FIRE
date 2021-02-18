@@ -1,3 +1,6 @@
+let year = new Date().getFullYear(); //Automatically update copyright year
+document.getElementById("copyrightDate").innerHTML = "&copy;" + year + " Developed by Tommy Vo | All rights reserved";
+
 let retirementMarker = 1;
 
 function calculate() {
@@ -50,7 +53,7 @@ function calculate() {
                 endAge = age + 10;
             }
         }                                        
-        let labelCol = "<tr><td>" + xtraDigit.concat(count) + "</td><td>" + age + " years old</td><td>" + year + "</td><td>" + new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(investment) + "</td><td>" + new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(gains) + "</td></tr>"
+        let labelCol = "<tr><td>" + xtraDigit.concat(count) + "</td><td>Age " + age + "</td><td>" + year + "</td><td>" + new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(investment) + "</td><td>" + new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(gains) + "</td></tr>"
         text += labelCol;                    
         investment *= returnRate;
         investment = parseFloat(investment) + parseFloat(annualContribution);
@@ -63,9 +66,6 @@ function calculate() {
     outputTable.innerHTML = text;
     highlightRetirement();
 }
-
-let year = new Date().getFullYear(); //Automatically update copyright year
-document.getElementById("copyrightDate").innerHTML = "&copy;" + year + " Developed by Tommy Vo | All rights reserved";
 
 $(document).ready(function() { //jQuery
     $(function() { 
