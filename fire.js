@@ -1,8 +1,8 @@
-let year = new Date().getFullYear(); //Automatically update copyright year
+//Automatically update copyright year
+let year = new Date().getFullYear();
 document.getElementById("copyrightDate").innerHTML = "&copy;" + year + " Developed by Tommy Vo | All rights reserved";
 
 let retirementMarker = 1;
-
 function calculate() {
     const getSpending = document.getElementById("spending");
     const getInvestment = document.getElementById("investment");
@@ -32,7 +32,7 @@ function calculate() {
     let year = new Date().getFullYear();
     let count = 0;
     let xtraDigit = "0";
-    retirementMarker = 1;
+    retirementMarker = 2;
     let retireYet = 0;
     let endAge = 65;
     let previousInvestment = 0;
@@ -66,7 +66,7 @@ function calculate() {
     outputTable.innerHTML = text;
     highlightRetirement();
 }
-
+//Highlight the retirement row
 $(document).ready(function() { //jQuery
     $(function() { 
         function jsFunc(){ 
@@ -76,3 +76,40 @@ $(document).ready(function() { //jQuery
         highlightRetirement = jsFunc;
     })
 }); //End jQuery
+
+const input1 = document.getElementById("spending");
+const input2 = document.getElementById("investment");
+const input3 = document.getElementById("annualContribution");
+const input4 = document.getElementById("returnRate");
+const input5 = document.getElementById("age");
+//Enter key activates Calculate button
+input1.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("button").click();
+  }
+});
+input2.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("button").click();
+  }
+});
+input3.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("button").click();
+  }
+});
+input4.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("button").click();
+  }
+});
+input5.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("button").click();
+  }
+});
