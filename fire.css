@@ -163,6 +163,9 @@ input:focus {
 .infoReturnRate:hover .tooltipReturnRate {
     visibility: visible;
 }
+.infoInflationRate:hover .tooltipInflationRate {
+    visibility: visible;
+}
 
 #button {
     font-size: 1.5rem;
