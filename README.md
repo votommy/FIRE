@@ -8,4 +8,5 @@ The program prompts for a handful of user inputs and uses those inputs to projec
 **Disclaimer**: *This program is only for theoretical application only, and should not be used for financial advice; consult a professional for real retirement advice & guidance.*
 
 <hr>
+
 I wrote this website as a way to showcase my UX abilities while applying something that I'm passionate about - personal finance. The goal of this project was to create an interactive user interface that was done completely in pure HTML without the assistance of frameworks such as Bootstrap. Most of the visual components are not meant to be practical, but rather, to be a showcase of the possibilities of HTML, CSS, & Javascript.
