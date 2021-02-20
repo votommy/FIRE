@@ -107,15 +107,6 @@ hr {
     margin-top: 1rem;
 }
 
-.centerText {
-    display: block;
-    text-align: center;
-}
-
-.indent {
-    list-style: none;
-}
-
 input {
     border-radius: 1rem;
     font-size: 1.5rem;
