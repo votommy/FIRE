@@ -9,4 +9,4 @@ The program prompts for a handful of user inputs and uses those inputs to projec
 
 <hr>
 
-I wrote this website as a way to showcase my UX abilities while applying something that I'm passionate about - personal finance. The goal of this project was to create an interactive user interface that was done completely in pure HTML without the assistance of frameworks such as Bootstrap. Most of the visual components are not meant to be practical, but rather, to be a showcase of the possibilities of HTML, CSS, & Javascript.
+I wrote this website as a way to showcase my UX abilities while applying something that I'm passionate about - personal finance. The goal of this project was to create an interactive user interface that was done completely in pure HTML. Most of the visual components are not meant to be practical, but rather, to be a showcase of the possibilities of HTML, CSS, & Javascript.
