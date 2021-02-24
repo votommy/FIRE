@@ -28,8 +28,10 @@ function calculate() {
     inflationRate /= 100;
     
     let returnRate = getReturnRate.value;
+    let retirementReturnRate = returnRate;
     if (returnRate.length == 0) {
         returnRate = 0.0;
+        retirementReturnRate = 0.0;
     }
     returnRate /= 100;
     returnRate = (returnRate - inflationRate) + 1;
@@ -50,6 +52,9 @@ function calculate() {
     let previousInvestment = 0;
     let gains = 0;
     
+    let retirementAge = 0;
+    let retirementYear = 0;
+    
     const outputTable = document.getElementById("outputTable");
     var text = "<table><tr><th>#</th><th>Age</th><th>Year</th><th>Wealth</th><th>Gains</th></tr>";
 
@@ -60,6 +65,8 @@ function calculate() {
         }
         if (investment >= retirementGoal && retireYet == 0) {
             retirementMarker = count + 2; // +2 to compensate for header row and the fact that index starts with 1
+            retirementAge = age;
+            retirementYear = year;
             retireYet = 1;
             if (age > (endAge - 10)) { // Always show at LEAST 10 years after retirement
                 endAge = age + 10;
@@ -74,13 +81,16 @@ function calculate() {
         year++;
         count++;
     }
-    text += "</table>";
+    text += "</table><hr><span style='font-weight: bold;'>Disclaimer: </span><span style='font-style: italic;'>This program is only for theoretical application only, and should not be used for financial advice; consult a professional for real retirement advice & guidance.</span>";
     outputTable.innerHTML = text;
     
     if (investment >= retirementGoal) {
-        document.querySelector("tr:nth-child(" + retirementMarker + ")").style.color = "var(--tommagenta)";
+        document.querySelector("tr:nth-child(" + retirementMarker + ")").style.color = "white";
+        document.querySelector("tr:nth-child(" + retirementMarker + ")").style.backgroundColor = "var(--tomgreen)";
         document.querySelector("tr:nth-child(" + retirementMarker + ")").style.fontWeight = "bold";
     }
+    
+    document.querySelector("#outputParagraph").innerHTML = "<hr>Given the information you provided, you should be able to retire in <span style='font-weight: bold;'>" + retirementYear + "</span> at the age of <span style='font-weight: bold;'>" + retirementAge + ".</span><br><br>Here\'s how it works:<br>During that year, your investments can generate enough money per year for you to live off of without having to work, theoretically.<br>Your retirement goal is to have at least <span style='font-weight: bold;'>" + currency.format(retirementGoal) + "</span> invested with a consistent return rate of <span style='font-weight: bold;'>" + retirementReturnRate + "%</span> (before inflation).<hr>";
 }
 
 //Enter key activates Calculate button
