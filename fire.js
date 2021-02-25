@@ -90,7 +90,7 @@ function calculate() {
         document.querySelector("tr:nth-child(" + retirementMarker + ")").style.fontWeight = "bold";
     }
     
-    document.querySelector("#outputParagraph").innerHTML = "<hr>Given the information you provided, you should be able to retire in <span style='font-weight: bold;'>" + retirementYear + "</span> at the age of <span style='font-weight: bold;'>" + retirementAge + ".</span><br><br>Here\'s how it works:<br>During that year, your investments can generate enough money per year for you to live off of without having to work, theoretically.<br>Your retirement goal is to have at least <span style='font-weight: bold;'>" + currency.format(retirementGoal) + "</span> invested with a consistent return rate of <span style='font-weight: bold;'>" + retirementReturnRate + "%</span> (before inflation).<hr>";
+    document.querySelector("#outputParagraph").innerHTML = "<hr>Given the information you provided, you should be able to retire in <span style='font-weight: bold;'>" + retirementYear + "</span> at the age of <span style='font-weight: bold;'>" + retirementAge + "</span>.<br><br>Here\'s how it works:<br>During that year, your investments can generate enough money per year for you to live off of without having to work, theoretically.<br>Your retirement goal is to have at least <span style='font-weight: bold;'>" + currency.format(retirementGoal) + "</span> invested with a consistent return rate of <span style='font-weight: bold;'>" + retirementReturnRate + "%</span> (before inflation).<hr>";
 }
 
 //Enter key activates Calculate button
