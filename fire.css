@@ -108,6 +108,7 @@ hr {
 }
 
 input {
+    font-family: font-family: "Century_Gothic", "Avenir";
     border-radius: 1rem;
     font-size: 1.5rem;
     padding-left: 1rem;
