@@ -85,8 +85,8 @@ function calculate() {
     outputTable.innerHTML = text;
     
     if (investment >= retirementGoal) {
-        document.querySelector("tr:nth-child(" + retirementMarker + ")").style.color = "white";
-        document.querySelector("tr:nth-child(" + retirementMarker + ")").style.backgroundColor = "var(--tomgreen)";
+        document.querySelector("tr:nth-child(" + retirementMarker + ")").style.color = "#808000";
+        document.querySelector("tr:nth-child(" + retirementMarker + ")").style.backgroundColor = "#FFFF99";
         document.querySelector("tr:nth-child(" + retirementMarker + ")").style.fontWeight = "bold";
     }
     
