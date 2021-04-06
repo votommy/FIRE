@@ -1,4 +1,4 @@
-# FIRE
+# FIRE (beta)
 A web program that tells you if/when you're able to retire early. As part of the [FIRE movement](https://en.wikipedia.org/wiki/FIRE_movement) (Financially Independent, Retire Early).
 
 Webpage Link: [votommy/FIRE](https://votommy.github.io/FIRE/index.html)
