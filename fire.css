@@ -38,8 +38,17 @@ html, body {
     overflow-x: hidden;
 }
 
-main {
-    margin-top: 5rem;    
+#FIRE_Logo {
+    display: block;
+    margin: 1rem auto 0 auto;
+    width: 10%;
+}
+
+#title {
+    font-size: 1.5rem;
+    color: red;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
 .container {
