@@ -103,6 +103,23 @@ hr {
     margin-top: 1rem;
 }
 
+/*Hide the spin buttons*/
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+input[type=number] { /*for FireFox*/
+  -moz-appearance: textfield;
+}
+
 input {
     font-family: font-family: "Century_Gothic", "Avenir";
     border-radius: 1rem;
