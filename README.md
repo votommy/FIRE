@@ -17,4 +17,5 @@ I wrote this website as a way to showcase my UX abilities while applying somethi
 
 TO DO:
 - Account for edge cases and improper user inputs.
-- Fix formatting on mobile devices
+- Fix formatting on mobile devices.
+- Implement API for tax rates and inflation rates.
