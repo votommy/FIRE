@@ -16,6 +16,9 @@ I wrote this website as a way to showcase my UX abilities while applying somethi
 <hr>
 
 TO DO:
-- Account for edge cases and improper user inputs.
+- Account for edge cases.
 - Fix formatting on mobile devices.
-- Implement API for tax rates and inflation rates.
+- Implement API for tax rates and inflation rates. 
+
+Obstacles:
+- No available APIs for returning estimated capital gains tax rates.
