@@ -1,4 +1,13 @@
 @font-face {
+    font-family: "TommySans";
+    src: url("https://github.com/votommy/TommySans/blob/main/WOFFs/TommySans.woff") format('woff');
+}
+@font-face {
+    font-family: "TommySans";
+    src: url("https://github.com/votommy/TommySans/blob/main/WOFFs/TommySansBold.woff") format('woff');
+    font-weight: bold;
+}
+@font-face {
     font-family: "Century_Gothic";
     src: url("fonts/GOTHIC.woff") format('woff');
 }
@@ -30,7 +39,7 @@ html {
 }
 
 html, body {
-    font-family: "Century_Gothic", "Avenir";
+    font-family: "TommySans", "Century_Gothic", "Avenir";
     color: white;
     font-size: 16px;
     padding: 0;
@@ -121,7 +130,7 @@ input[type=number] { /*for FireFox*/
 }
 
 input {
-    font-family: font-family: "Century_Gothic", "Avenir";
+    font-family: font-family: "TommySans", "Century_Gothic", "Avenir";
     border-radius: 1rem;
     font-size: 1.5rem;
     padding-left: 1rem;
@@ -158,7 +167,8 @@ input:focus {
 }
 .tooltip {
     visibility: hidden;
-    border-radius: 1rem;
+    border-radius: 0px 1rem 1rem 1rem;
+    box-shadow: 0 0 1rem #00000077;
     padding: .5rem;
     background-color: white;
     position: absolute;
