@@ -41,7 +41,7 @@ html {
 }
 
 html, body {
-    font-family: "TommySans", "Century_Gothic", "Avenir";
+    font-family: "TommySans", "Century_Gothic";
     color: white;
     font-size: 16px;
     padding: 0;
@@ -132,7 +132,7 @@ input[type=number] { /*for FireFox*/
 }
 
 input {
-    font-family: font-family: "TommySans", "Century_Gothic", "Avenir";
+    font-family: font-family: "TommySans", "Century_Gothic";
     border-radius: 1rem;
     font-size: 1.5rem;
     padding-left: 1rem;
