@@ -16,8 +16,10 @@ I wrote this website as a way to showcase my UX abilities while applying somethi
 <hr>
 
 TO DO:
-- Account for edge cases.
+- Find more edge cases.
 - Fix formatting on mobile devices.
+- Convert javascript to Vue.js
+- Convert css to Sass
 - Implement API for tax rates and inflation rates. 
 
 Obstacles:
