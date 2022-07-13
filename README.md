@@ -11,13 +11,11 @@ The program prompts for a handful of user inputs and uses those inputs to projec
 
 <hr>
 
-I wrote this website as a way to showcase my UX abilities while applying something that I'm passionate about - personal finance. The goal of this project was to create an interactive user interface that was done completely in pure HTML with no help from tools such as Bootstrap or jQuery.
-
-<hr>
-
 TO DO:
-- Account for edge cases.
+- Find more edge cases.
 - Fix formatting on mobile devices.
+- Convert javascript to Vue.js
+- Convert css to Sass
 - Implement API for tax rates and inflation rates. 
 
 Obstacles:
