@@ -16,7 +16,8 @@ TO DO:
 - Fix formatting on mobile devices.
 - Convert javascript to Vue.js
 - Convert css to Sass
-- Implement API for tax rates and inflation rates. 
+- Implement API for tax rates. 
+- Implement API for inflation rates.
 
 Obstacles:
 - No available APIs for returning estimated capital gains tax rates.
