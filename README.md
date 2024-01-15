@@ -1,5 +1,5 @@
 <img src="FIRE_Logo.svg" width="100px">
-<h1>#FIRE</h1>
+<h1>#FIRE (alpha)</h1>
 
 A web program that tells you if/when you're able to retire early, as part of the [FIRE movement](https://en.wikipedia.org/wiki/FIRE_movement) (Financially Independent, Retire Early).
 
@@ -16,7 +16,8 @@ TO DO:
 - Fix formatting on mobile devices.
 - Convert javascript to Vue.js
 - Convert css to Sass
-- Implement API for tax rates and inflation rates. 
+- Implement API for tax rates. 
+- Implement API for inflation rates.
 
 Obstacles:
 - No available APIs for returning estimated capital gains tax rates.
