@@ -24,7 +24,7 @@ function calculate() {
     
     let inflationRate = getInflationRate.value;
     if (inflationRate.length == 0) {
-        inflationRate = 2.52;
+        inflationRate = 3.10;
     }
     inflationRate /= 100;
     

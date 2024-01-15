@@ -17,32 +17,32 @@
                         <div class="blurBox">
                             <span class="h1">See when you can retire given your lifestyle.</span>
                             <br><br>
-                            <span>Monthly Spending in Retirement: </span><span id="labelFront">$</span><input id="spending" placeholder="0.00" type="number" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || (event.charCode == 46)" step="100" onpaste="return false" ondrop="return false">
+                            <span>Monthly Spending in Retirement: </span><span id="labelFront">$</span><input id="spending" placeholder="0.00" type="number" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || (event.charCode == 46)" step="100">
                             <div class="info infoSpending"><span id="infoIcon">i</span>
                                 <span class="tooltip tooltipSpending">How much you plan on spending every month in retirement.</span>
                             </div>
                             <br><br>
-                            <span>Current Investment: </span><span id="labelFront">$</span><input id="investment" placeholder="0.00" type="number" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || (event.charCode == 46)" step="100" onpaste="return false" ondrop="return false">
+                            <span>Current Investment: </span><span id="labelFront">$</span><input id="investment" placeholder="0.00" type="number" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || (event.charCode == 46)" step="100">
                             <div class="info infoInvestment"><span id="infoIcon">i</span>
                                 <span class="tooltip tooltipInvestment">How much you currently have in investment.</span>
                             </div>
                             <br><br>
-                            <span>Annual Contribution: </span><span id="labelFront">$</span><input id="annualContribution" placeholder="0.00" type="number" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || (event.charCode == 46)" step="100" onpaste="return false" ondrop="return false">
+                            <span>Annual Contribution: </span><span id="labelFront">$</span><input id="annualContribution" placeholder="0.00" type="number" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || (event.charCode == 46)" step="100">
                             <div class="info infoAnnualContribution"><span id="infoIcon">i</span>
                                 <span class="tooltip tooltipAnnualContribution">How much you are adding to your investments annually.</span>
                             </div>
                             <br><br>
-                            <span>Return Rate (%): </span><input id="returnRate" placeholder="0.0" type="number" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || (event.charCode == 46)" step="1" onpaste="return false" ondrop="return false">
+                            <span>Return Rate (%): </span><input id="returnRate" placeholder="0.0" type="number" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || (event.charCode == 46)" step="1">
                             <div class="info infoReturnRate"><span id="infoIcon">i</span>
                                 <span class="tooltip tooltipReturnRate">How much your investments are earning annually (percentage).</span>
                             </div>
                             <br><br>
-                            <span>Inflation Rate (%): </span><input id="inflationRate" placeholder="2.52" type="number" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || (event.charCode == 46)" step="0.1" onpaste="return false" ondrop="return false">
+                            <span>Inflation Rate (%): </span><input id="inflationRate" placeholder="3.10" type="number" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || (event.charCode == 46)" step="0.1">
                             <div class="info infoInflationRate"><span id="infoIcon">i</span>
-                                <span class="tooltip tooltipInflationRate">According to The World Bank, the average inflation rate in the US from 1989-2019 was 2.52%.</span>
+                                <span class="tooltip tooltipInflationRate">According to InflationData.com, the average inflation rate in the US from 1913-2030 is 3.10%.</span>
                             </div>
                             <br><br>
-                            <span>Current Age: </span><span id="label"></span><input id="age" placeholder="0" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" step="1" onpaste="return false" ondrop="return false">
+                            <span>Current Age: </span><span id="label"></span><input id="age" placeholder="0" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" step="1">
                             <br><br>
                             <input type="button" id="button" value="Calculate" onclick="calculate()">
                             <span id="outputParagraph"></span>
