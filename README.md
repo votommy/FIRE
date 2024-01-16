@@ -12,12 +12,12 @@ The program prompts for a handful of user inputs and uses those inputs to projec
 <hr>
 
 TO DO:
-- Find more edge cases.
-- Fix formatting on mobile devices.
-- Convert javascript to Vue.js
-- Convert css to Sass
-- Implement API for tax rates. 
-- Implement API for inflation rates.
+- [ ] Find more edge cases.
+- [ ] Fix formatting on mobile devices.
+- [ ] Convert javascript to Vue.js
+- [ ] Convert css to scss
+- [ ] Implement API for tax rates. 
+- [ ] Implement API for inflation rates.
 
 Obstacles:
 - No available APIs for returning estimated capital gains tax rates.
