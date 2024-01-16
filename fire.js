@@ -37,10 +37,13 @@ function calculate() {
     returnRate /= 100;
     let adjustedReturnRate = (returnRate - inflationRate) * 100
 
-    //Retire Status: 0 = false, 1 = true, 2 = insufficient return rate
+    //Retire Status: 0 = false, 1 = true, 2-3 = insufficient return rate
     let retireStatus = 0;
-    if(returnRate <= inflationRate) {
+    if(returnRate < inflationRate) {
         retireStatus = 2;
+    }
+    else if(returnRate == inflationRate) {
+        retireStatus = 3;
     }
     returnRate = (returnRate - inflationRate) + 1;
     
@@ -99,17 +102,20 @@ function calculate() {
     
     //Display different results depending if financial independence is achieved.
     if (retireStatus == 1) {
-        document.querySelector("#outputParagraph").innerHTML = "<hr>Given the information you provided, you should be able to retire in <span style='font-weight: bold;'>" + retirementYear + "</span> at the age of <span style='font-weight: bold;'>" + retirementAge + "</span>.<br><br>Here\'s how it works:<br>During that year, your investments can generate enough money per year for you to live off of without having to work, theoretically.<br>Your retirement goal is to have at least <span style='font-weight: bold;'>" + currency.format(retirementGoal) + "</span> invested with a consistent return rate of " + retirementReturnRate + "% (<span style='font-weight: bold;'>" + adjustedReturnRate + "%</span> after inflation).<hr>";
+        document.querySelector("#outputParagraph").innerHTML = "<hr>Given the information you provided, you should be able to retire in <span style='font-weight: bold;'>" + retirementYear + "</span> at the age of <span style='font-weight: bold;'>" + retirementAge + "</span>.<br><br>Here\'s how it works:<br>During that year, your investments can generate enough money per year for you to live off of without having to work, theoretically.<br>Your retirement goal is to have at least <span style='font-weight: bold;'>" + currency.format(retirementGoal) + "</span> invested with a consistent return rate of " + retirementReturnRate + "% (<span style='font-weight: bold;'>" + adjustedReturnRate.toFixed(2) + "%</span> after inflation).<hr>";
         
         document.querySelector("tr:nth-child(" + retirementMarker + ")").style.color = "#808000";
         document.querySelector("tr:nth-child(" + retirementMarker + ")").style.backgroundColor = "#FFFF99";
         document.querySelector("tr:nth-child(" + retirementMarker + ")").style.fontWeight = "bold";
     }
     else if (retireStatus == 0) {
-        document.querySelector("#outputParagraph").innerHTML = "<hr>Given the information you provided, you cannot achieve financial independence before the age of 65.<br><br>In order to achieve financial independence, you must have at least <span style='font-weight: bold;'>" + currency.format(retirementGoal) + "</span> invested with a consistent return rate of <span style='font-weight: bold;'>" + retirementReturnRate + "%</span> (before inflation).<br>In " + failYear + ", when you are 65, you would have invested <span style='font-weight: bold;'>" + currency.format(failInvestment) + "</span>, which is less than what you'd need.<br><br>There's a combination of three things you can do to reach financial independence sooner:<br>1. Lower your monthly spending<br>2. Increase your annual contribution<br>3. Choose investments with a higher return rate<hr>";
+        document.querySelector("#outputParagraph").innerHTML = "<hr>Given the information you provided, you cannot achieve financial independence before the age of 65.<br><br>In order to achieve financial independence, you must have at least <span style='font-weight: bold;'>" + currency.format(retirementGoal) + "</span> invested with a consistent return rate of " + retirementReturnRate + "% (<span style='font-weight: bold;'>" + adjustedReturnRate.toFixed(2) + "</span> after inflation).<br>In " + failYear + ", when you are 65, you would have invested <span style='font-weight: bold;'>" + currency.format(failInvestment) + "</span>, which is less than what you'd need.<br><br>There's a combination of three things you can do to reach financial independence sooner:<br>1. Lower your monthly spending<br>2. Increase your annual contribution<br>3. Choose investments with a higher return rate<hr>";
     }
     else if (retireStatus == 2) {
-        document.querySelector("#outputParagraph").innerHTML = "<hr>Given the information you provided, you cannot achieve financial independence before the age of 65.<br><br>It seems your investments' return rate is lower than the rate of inflation, which means your money is losing value each year.<br><br>In order to reach financial independence, the return rate of your investments must generate enough money per year for you to live off of without having to work, theoretically.<hr>";
+        document.querySelector("#outputParagraph").innerHTML = "<hr>Given the information you provided, you cannot achieve financial independence before the age of 65.<br><br>It seems your investments' return rate is lower the rate of inflation, which means your money is losing value each year.<br><br>In order to reach financial independence, the return rate of your investments must generate enough money per year for you to live off of without having to work, theoretically.<hr>";
+    }
+    else if (retireStatus == 3) {
+        document.querySelector("#outputParagraph").innerHTML = "<hr>Given the information you provided, you cannot achieve financial independence before the age of 65.<br><br>It seems your investments' return rate is equal to the rate of inflation, which means your money is not increasing in value each year.<br><br>In order to reach financial independence, the return rate of your investments must generate enough money per year for you to live off of without having to work, theoretically.<hr>";
     }
 }
 
