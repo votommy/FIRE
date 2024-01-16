@@ -35,6 +35,8 @@ function calculate() {
         retirementReturnRate = 0.0;
     }
     returnRate /= 100;
+    let adjustedReturnRate = (returnRate - inflationRate) * 100
+
     //Retire Status: 0 = false, 1 = true, 2 = insufficient return rate
     let retireStatus = 0;
     if(returnRate <= inflationRate) {
@@ -97,7 +99,7 @@ function calculate() {
     
     //Display different results depending if financial independence is achieved.
     if (retireStatus == 1) {
-        document.querySelector("#outputParagraph").innerHTML = "<hr>Given the information you provided, you should be able to retire in <span style='font-weight: bold;'>" + retirementYear + "</span> at the age of <span style='font-weight: bold;'>" + retirementAge + "</span>.<br><br>Here\'s how it works:<br>During that year, your investments can generate enough money per year for you to live off of without having to work, theoretically.<br>Your retirement goal is to have at least <span style='font-weight: bold;'>" + currency.format(retirementGoal) + "</span> invested with a consistent return rate of <span style='font-weight: bold;'>" + retirementReturnRate + "%</span> (before inflation).<hr>";
+        document.querySelector("#outputParagraph").innerHTML = "<hr>Given the information you provided, you should be able to retire in <span style='font-weight: bold;'>" + retirementYear + "</span> at the age of <span style='font-weight: bold;'>" + retirementAge + "</span>.<br><br>Here\'s how it works:<br>During that year, your investments can generate enough money per year for you to live off of without having to work, theoretically.<br>Your retirement goal is to have at least <span style='font-weight: bold;'>" + currency.format(retirementGoal) + "</span> invested with a consistent return rate of " + retirementReturnRate + "% (<span style='font-weight: bold;'>" + adjustedReturnRate + "%</span> after inflation).<hr>";
         
         document.querySelector("tr:nth-child(" + retirementMarker + ")").style.color = "#808000";
         document.querySelector("tr:nth-child(" + retirementMarker + ")").style.backgroundColor = "#FFFF99";
