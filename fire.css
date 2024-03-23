@@ -32,8 +32,7 @@
 
 html {
     height: 100vh;
-    background-color: white; /*For no gradient support*/
-    background-image: linear-gradient(110deg, #FFFF99, #99FF99, #99FF99, #B3ECFF);
+    background-color: #FEFFEB;
     background-repeat: no-repeat;
     background-attachment: fixed;
     width:100%;
@@ -42,7 +41,7 @@ html {
 
 html, body {
     font-family: "TommySans", "Century_Gothic";
-    color: white;
+    color: #474B3A;
     font-size: 16px;
     padding: 0;
     margin: 0;
@@ -57,7 +56,7 @@ html, body {
 
 #title {
     font-size: 1.5rem;
-    color: red;
+    color: #008000;
     margin-bottom: 1rem;
     text-align: center;
 }
@@ -83,7 +82,7 @@ html, body {
 }
 
 .heading {
-    color: white;
+    color: #474B3A;
     display: block;
     text-align: center;
     font-weight: normal;
@@ -91,15 +90,15 @@ html, body {
 
 .h1 {
     font-size: 2rem;
-    color: white;
+    color: #474B3A;
 }
 .h2 {
     font-size: 1.3rem;
 }
 
 .blurBox {
-    background-color: gray;
-    background-color: #00000040;
+    background-color: #5F6156;
+    background-color: #00200030;
     -webkit-backdrop-filter: blur(1rem);
     backdrop-filter: blur(1rem);
     min-width: 70%;
@@ -109,7 +108,7 @@ html, body {
 }
 
 hr {
-    border-top: 1px white;
+    border-top: 1px #474B3A;
     border-style: solid none none none;
     margin-top: 1rem;
 }
@@ -132,6 +131,8 @@ input[type=number] { /*for FireFox*/
 }
 
 input {
+    background-color: #474B3A;
+    color: #CED5BF;
     border-radius: 1rem;
     font-size: 1.5rem;
     padding-left: 1rem;
@@ -140,6 +141,9 @@ input {
 input:focus {
     outline-width: 0;
 }
+input::placeholder {
+    color: #CED5BFAA;
+}
 
 #labelFront {
     font-size: 1.5rem;
@@ -147,8 +151,8 @@ input:focus {
 }
 
 #infoIcon {
-    background-color: white;
-    color: #808000;
+    background-color: #474B3A;
+    color: #CED5BF;
     padding: 0 .35rem;
     margin-right: .5rem;
     border-radius: 50%;
@@ -169,12 +173,12 @@ input:focus {
 .tooltip {
     visibility: hidden;
     border-radius: 0px 1rem 1rem 1rem;
-    box-shadow: 0 0 1rem #00000077;
+    box-shadow: 0 0 1rem #0000006A;
     padding: .5rem;
-    background-color: white;
+    background-color: #474B3A;
     position: absolute;
     font-size: 1rem;
-    color: black;
+    color: #CED5BF;
     min-width: 13rem;
     z-index: 99;
 }
@@ -196,13 +200,14 @@ input:focus {
 
 #button {
     font-size: 1.5rem;
-    background-color: white;
+    background-color: #474B3A;
+    color: #CED5BF;
     border-radius: 2rem;
     padding: .5rem 1rem;
     border: 0;
 }
 #button:hover {
-    box-shadow: 0 0 7px 2px #FFFFFFAA;
+    box-shadow: 0 0 7px 2px #0000006A;
     cursor: pointer;
 }
 
@@ -218,7 +223,7 @@ td, th {
 }
 
 tr:nth-child(odd) {
-  background-color: #00000035;
+  background-color: #00000015;
 }
 
 footer {
