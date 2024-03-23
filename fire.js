@@ -88,7 +88,7 @@ function calculate() {
                 endAge = age + 10;
             }
         }
-        let labelCol = "<tr><td>" + xtraDigit.concat(count) + "</td><td>Age " + age + "</td><td>" + year + "</td><td>" + currency.format(investment) + "</td><td>" + currency.format(gains) + "</td></tr>"
+        let labelCol = "<tr><td>" + xtraDigit.concat(count) + "</td><td>Age " + age + "</td><td>" + year + "</td><td>" + currency.format(investment) + "</td><td>" + (gains >= 0 ? '+' : '') + currency.format(gains) + "</td></tr>"
         text += labelCol;                    
         investment *= returnRate;
         investment = parseFloat(investment) + parseFloat(annualContribution);
