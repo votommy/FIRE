@@ -1,10 +1,10 @@
 function calculate() {
-    const getSpending = document.getElementById("spending");
-    const getInvestment = document.getElementById("investment");
-    const getAnnualContribution = document.getElementById("annualContribution");
-    const getReturnRate = document.getElementById("returnRate");
-    const getInflationRate = document.getElementById("inflationRate");
-    const getAge = document.getElementById("age");
+    const getSpending = document.querySelector("#spending");
+    const getInvestment = document.querySelector("#investment");
+    const getAnnualContribution = document.querySelector("#annualContribution");
+    const getReturnRate = document.querySelector("#returnRate");
+    const getInflationRate = document.querySelector("#inflationRate");
+    const getAge = document.querySelector("#age");
     
     //If input is blank, use placeholder
     let spending = getSpending.value;
@@ -67,8 +67,8 @@ function calculate() {
     let retirementAge = 0;
     let retirementYear = 0;
     
-    const outputTable = document.getElementById("outputTable");
-    var text = "<table><tr><th>#</th><th>Age</th><th>Year</th><th>Wealth</th><th>Gains</th></tr>";
+    const outputTable = document.querySelector("#outputTable");
+    let text = "<table><tr><th>#</th><th>Age</th><th>Year</th><th>Wealth</th><th>Gains</th></tr>";
 
     while (age <= endAge) {
         previousInvestment = investment;
@@ -120,43 +120,57 @@ function calculate() {
 }
 
 //Enter key activates Calculate button
-document.getElementById("spending").addEventListener("keyup", function(event) {
+function handleEnter(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
-        document.getElementById("button").click();
+        document.querySelector("#button").click();
     }
+}
+// Write inputs to URL
+function writeToURL(event, id) {
+    let params = new URLSearchParams(window.location.search);
+    params.set(id, event.target.value);
+    window.history.pushState({}, '', window.location.pathname + '?' + params.toString());
+}
+
+document.querySelector("#spending").addEventListener("keyup", function(event) {
+    handleEnter(event);
+    writeToURL(event, "spending");
 });
-document.getElementById("investment").addEventListener("keyup", function(event) {
-    if (event.keyCode === 13) {
-        event.preventDefault();
-        document.getElementById("button").click();
-    }
+document.querySelector("#investment").addEventListener("keyup", function(event) {
+    handleEnter(event);
+    writeToURL(event, "investment");
 });
-document.getElementById("annualContribution").addEventListener("keyup", function(event) {
-    if (event.keyCode === 13) {
-        event.preventDefault();
-        document.getElementById("button").click();
-    }
+document.querySelector("#annualContribution").addEventListener("keyup", function(event) {
+    handleEnter(event);
+    writeToURL(event, "annualContribution");
 });
-document.getElementById("returnRate").addEventListener("keyup", function(event) {
-    if (event.keyCode === 13) {
-        event.preventDefault();
-        document.getElementById("button").click();
-    }
+document.querySelector("#returnRate").addEventListener("keyup", function(event) {
+    handleEnter(event);
+    writeToURL(event, "returnRate");
 });
-document.getElementById("inflationRate").addEventListener("keyup", function(event) {
-    if (event.keyCode === 13) {
-        event.preventDefault();
-        document.getElementById("button").click();
-    }
+document.querySelector("#inflationRate").addEventListener("keyup", function(event) {
+    handleEnter(event);
+    writeToURL(event, "inflationRate");
 });
-document.getElementById("age").addEventListener("keyup", function(event) {
-    if (event.keyCode === 13) {
-        event.preventDefault();
-        document.getElementById("button").click();
-    }
+document.querySelector("#age").addEventListener("keyup", function(event) {
+    handleEnter(event);
+    writeToURL(event, "age");
 });
 
-//Automatically update copyright year
+// Load inputs from URL
+window.onload = function() {
+    const params = new URLSearchParams(window.location.search);
+    const inputs = ["spending", "investment", "annualContribution", "returnRate", "inflationRate", "age"]
+
+    for (input of inputs) {
+        const inputValue = params.get(input);
+        if (input) {
+          document.querySelector(`#${input}`).value = inputValue;
+        }
+    }
+};
+
+// Automatically update copyright year
 const copyrightYear = new Date().getFullYear();
-document.getElementById("copyrightDate").innerHTML = "&copy;" + copyrightYear + " Developed by Tommy Vo | All rights reserved";
+document.querySelector("#copyrightDate").innerHTML = "&copy;" + copyrightYear + " Developed by Tommy Vo | All rights reserved";
