@@ -170,10 +170,13 @@ input::placeholder {
 .info:hover {
     cursor: pointer;
 }
+.info:hover #infoIcon {
+    background-color: #303328;
+}
 .tooltip {
     visibility: hidden;
     border-radius: 0px 1rem 1rem 1rem;
-    box-shadow: 0 0 1rem #0000006A;
+    box-shadow: 0 0 1rem #00000099;
     padding: .5rem;
     background-color: #474B3A;
     position: absolute;
@@ -207,7 +210,7 @@ input::placeholder {
     border: 0;
 }
 #button:hover {
-    box-shadow: 0 0 7px 2px #0000006A;
+    background-color: #303328;
     cursor: pointer;
 }
 
@@ -229,7 +232,7 @@ tr:nth-child(odd) {
 footer {
     font-size: 1rem;
     padding: 2rem 0;
-    border-top: 1px dashed black;
-    color: black;
+    border-top: 1px dashed #008000;
+    color: #008000;
     text-align: center;
 }
