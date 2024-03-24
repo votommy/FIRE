@@ -119,7 +119,7 @@ function calculate() {
     }
 }
 
-//Enter key activates Calculate button
+// Enter key activates Calculate button
 function handleEnter(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
@@ -131,6 +131,10 @@ function writeToURL(event, id) {
     let params = new URLSearchParams(window.location.search);
     params.set(id, event.target.value);
     window.history.pushState({}, '', window.location.pathname + '?' + params.toString());
+}
+// Reset inputs
+function resetInputs() {
+    window.location.href = "/";
 }
 
 document.querySelector("#spending").addEventListener("keyup", function(event) {

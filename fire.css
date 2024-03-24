@@ -52,6 +52,7 @@ html, body {
     display: block;
     margin: 1rem auto 0 auto;
     width: 10%;
+    cursor: pointer;
 }
 
 #title {
