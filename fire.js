@@ -3,6 +3,7 @@ function calculate() {
     const getInvestment = document.querySelector("#investment");
     const getAnnualContribution = document.querySelector("#annualContribution");
     const getReturnRate = document.querySelector("#returnRate");
+    const getTaxRate = document.querySelector("#taxRate");
     const getInflationRate = document.querySelector("#inflationRate");
     const getAge = document.querySelector("#age");
     
@@ -21,6 +22,13 @@ function calculate() {
     if (annualContribution.length == 0) {
         annualContribution = 0.0;
     }
+
+    let taxRate = getTaxRate.value;
+    if (taxRate.length == 0) {
+        taxRate = 15.0;
+    }
+    taxRate /= 100;
+
     
     let inflationRate = getInflationRate.value;
     if (inflationRate.length == 0) {
@@ -89,10 +97,21 @@ function calculate() {
             }
         }
         let labelCol = "<tr><td>" + xtraDigit.concat(count) + "</td><td>Age " + age + "</td><td>" + year + "</td><td>" + currency.format(investment) + "</td><td>" + (gains >= 0 ? '+' : '') + currency.format(gains) + "</td></tr>"
-        text += labelCol;                    
-        investment *= returnRate;
-        investment = parseFloat(investment) + parseFloat(annualContribution);
-        gains = investment - previousInvestment;
+        text += labelCol;       
+
+        // Calculate gains before tax
+        let grossGains = previousInvestment * (returnRate - 1);
+
+        // Apply capital gains tax
+        let tax = grossGains * taxRate;
+        let netGains = grossGains - tax;
+
+        // Update investment
+        investment = previousInvestment + netGains + parseFloat(annualContribution);
+
+        // Track gains for display
+        gains = netGains;
+
         age++;
         year++;
         count++;
@@ -153,6 +172,10 @@ document.querySelector("#returnRate").addEventListener("keyup", function(event) 
     handleEnter(event);
     writeToURL(event, "returnRate");
 });
+document.querySelector("#taxRate").addEventListener("keyup", function(event) {
+    handleEnter(event);
+    writeToURL(event, "taxRate");
+});
 document.querySelector("#inflationRate").addEventListener("keyup", function(event) {
     handleEnter(event);
     writeToURL(event, "inflationRate");
@@ -165,7 +188,7 @@ document.querySelector("#age").addEventListener("keyup", function(event) {
 // Load inputs from URL
 window.onload = function() {
     const params = new URLSearchParams(window.location.search);
-    const inputs = ["spending", "investment", "annualContribution", "returnRate", "inflationRate", "age"]
+    const inputs = ["spending", "investment", "annualContribution", "returnRate", "taxRate", "inflationRate", "age"]
 
     for (input of inputs) {
         const inputValue = params.get(input);

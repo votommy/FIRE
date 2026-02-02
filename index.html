@@ -37,6 +37,11 @@
                                 <span class="tooltip tooltipReturnRate">How much your investments are earning annually (percentage).</span>
                             </div>
                             <br><br>
+                            <span>Capital Gains Tax Rate (%): </span><input id="taxRate" placeholder="15" type="number" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || (event.charCode == 46)" step="0.1">
+                            <div class="info infoTaxRate"><span id="infoIcon">i</span>
+                                <span class="tooltip tooltipTaxRate">Your long term capital gains tax rate depends on your income and filing status.</span>
+                            </div>
+                            <br><br>
                             <span>Inflation Rate (%): </span><input id="inflationRate" placeholder="3.10" type="number" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || (event.charCode == 46)" step="0.1">
                             <div class="info infoInflationRate"><span id="infoIcon">i</span>
                                 <span class="tooltip tooltipInflationRate">According to InflationData.com, the average inflation rate in the US from 1913-2023 is 3.10%.</span>

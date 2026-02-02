@@ -197,6 +197,8 @@ input::placeholder {
 }
 .infoReturnRate:hover .tooltipReturnRate {
     visibility: visible;
+}.infoTaxRate:hover .tooltipTaxRate {
+    visibility: visible;
 }
 .infoInflationRate:hover .tooltipInflationRate {
     visibility: visible;
